@@ -11,6 +11,7 @@ import android.view.View
 import android.os.Parcel
 import android.view.animation.LinearInterpolator
 import kotlin.math.min
+import androidx.annotation.ColorRes
 
 @Suppress("UNUSED")
 class MultiProgressBar @JvmOverloads constructor(context: Context, attributeSet: AttributeSet? = null, defStyle: Int = 0) : View(context, attributeSet, defStyle) {
@@ -75,6 +76,11 @@ class MultiProgressBar @JvmOverloads constructor(context: Context, attributeSet:
         }
 
         setMeasuredDimension(width, height)
+    }
+    
+    fun setProgressColor(@ColorRes color: Int){
+        progressColor = color
+        invalidate()
     }
 
     override fun onSaveInstanceState(): Parcelable? {
