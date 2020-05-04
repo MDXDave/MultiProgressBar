@@ -177,6 +177,11 @@ class MultiProgressBar @JvmOverloads constructor(context: Context, attributeSet:
         pause()
         internalStartProgress()
     }
+    
+    fun play() {
+        if (isProgressIsRunning) return
+        activeAnimator?.start()
+    }
 
     fun pause() {
         isProgressIsRunning = false
